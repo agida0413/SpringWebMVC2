@@ -69,8 +69,12 @@ public class FormItemController {
     }
 
     @PostMapping("/add")
-    public String addItem(@ModelAttribute Item item, RedirectAttributes redirectAttributes) {
-
+    public String addItem(@ModelAttribute Item item, RedirectAttributes redirectAttributes, String test , @RequestParam("testList[]") List<String> testList) {
+        System.out.println(test);
+        for(String str: testList){
+            System.out.println(str);
+        }
+        log.info("test={}",test);
         log.info("item.open={}", item.getOpen());
         log.info("item.regions={}", item.getRegions());
         log.info("item.itemType={}", item.getItemType());
@@ -94,6 +98,8 @@ public class FormItemController {
         itemRepository.update(itemId, item);
         return "redirect:/form/items/{itemId}";
     }
+
+
 
 }
 
