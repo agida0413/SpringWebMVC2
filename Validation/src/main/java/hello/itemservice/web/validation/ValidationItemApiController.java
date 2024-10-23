@@ -28,11 +28,5 @@ public class ValidationItemApiController {
 
 
 
-    @PostMapping("/test")
-    public ResponseEntity<?> addItem() {
 
-
-
-
-    }
 }

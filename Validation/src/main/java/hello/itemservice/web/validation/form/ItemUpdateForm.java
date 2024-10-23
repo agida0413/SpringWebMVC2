@@ -20,6 +20,38 @@ public class ItemUpdateForm {
     @Range(min = 1000, max = 1000000)
     private Integer price;
 
+    public @NotNull Long getId() {
+        return id;
+    }
+
+    public void setId(@NotNull Long id) {
+        this.id = id;
+    }
+
+    public @NotBlank String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(@NotBlank String itemName) {
+        this.itemName = itemName;
+    }
+
+    public @NotNull @Range(min = 1000, max = 1000000) Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(@NotNull @Range(min = 1000, max = 1000000) Integer price) {
+        this.price = price;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
     //수정에서는 수량은 자유롭게 변경할 수 있다.
     private Integer quantity;
 }
